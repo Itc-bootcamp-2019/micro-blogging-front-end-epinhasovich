@@ -1,0 +1,86 @@
+body {
+  background: #15202B;
+  color: white;
+}
+
+.navbar {
+  position: absolute;
+  width: 1076px;
+  height: 58px;
+  left: 182px;
+  top: 0px;
+
+  background: #343A40;
+  border-radius: 6px;
+}
+
+.home-menu {
+  position: absolute;
+width: 38px;
+height: 16px;
+left: 217.87px;
+top: 19px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+
+.profile-menu {
+  position: absolute;
+width: 41px;
+height: 16px;
+left: 300.87px;
+top: 19px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: rgba(255, 255, 255, 0.5);
+}
+
+.messageBox {
+  position: absolute;
+width: 600px;
+height: 180px;
+left: 367px;
+top: 105px;
+
+border: 2px solid #CCCCCC;
+box-sizing: border-box;
+border-radius: 6px;
+resize: none;
+}
+
+button {
+  position: absolute;
+width: 68px;
+height: 34px;
+left: 889px;
+top: 245px;
+
+background: #007BFF;
+border-radius: 4px;
+}
+
+.message {
+  position: relative;
+width: 600px;
+height: 84px;
+left: 367px;
+top: 320px;
+
+background: #343A40;
+border-radius: 6px;
+}
