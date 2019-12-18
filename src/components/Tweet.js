@@ -1,17 +1,21 @@
 import React from 'react';
-import MyAppContext from './contexts/MyAppContext';
+import MyAppContext from '../contexts/MyAppContext';
 
 class Tweet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tweet: ''
+            tweet: {
+                content: '',
+                date: '',
+                userName: ''
+            }
         }
     }
 
 
 handleNewTweet(event) {
-    this.setState({ tweet: event.target.value });
+    this.setState({ tweet: { content: event.target.value }});
 }
 
 render() {
@@ -31,5 +35,4 @@ render() {
 
     
 export default Tweet;
-    
     

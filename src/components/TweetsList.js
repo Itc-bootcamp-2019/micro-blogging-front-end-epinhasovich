@@ -1,10 +1,5 @@
 import React from 'react';
-import MyAppContext from './contexts/MyAppContext';
-
-var today = new Date();
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date+' '+time;
+import MyAppContext from '../contexts/MyAppContext';
 
 class TweetsList extends React.Component {
     constructor(props) {
@@ -17,13 +12,13 @@ class TweetsList extends React.Component {
     render() {
         return (
             <MyAppContext.Consumer>
-                {({ addTweet, tweets }) => (
+                {({ tweets }) => (
                     <div >
                         {tweets.map(tweet => (
                             <div className="message">
-                                <span>Eric</span>
-                                <span className="date">{dateTime}</span>
-                                <p key={tweet}>{tweet}</p>
+                                <span className="username">{tweet.userName}</span>
+                                <span className="date">{tweet.date}</span>
+                                <p key={tweet.content}>{tweet.content}</p>
                             </div>
                         ))} 
                     </div>
@@ -33,18 +28,5 @@ class TweetsList extends React.Component {
     }
 }
 
-// const TweetsList = props => {
-//     return (
-//         <MyAppContext.Consumer>
-//             {context => (
-//                 <div>
-//                     {context.tweets.map(tweet => (
-//                         <p key={tweet}>{tweet}></p>
-//                     ))}
-//                 </div>
-//             )}
-//         </MyAppContext.Consumer>
-//     )
-// }
-
 export default TweetsList;
+
