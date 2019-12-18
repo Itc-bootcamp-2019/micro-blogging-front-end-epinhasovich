@@ -80,7 +80,18 @@ width: 600px;
 height: 84px;
 left: 367px;
 top: 320px;
+margin-bottom: 10px;
 
 background: #343A40;
 border-radius: 6px;
+}
+
+.username {
+  color: #6C757D;
+}
+
+.date {
+  display: inline;
+  margin-left: 420px;
+  color: #6C757D;
 }

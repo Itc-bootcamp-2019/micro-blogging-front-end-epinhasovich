@@ -8,37 +8,40 @@ import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-r
 
 
 class App extends React.Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
-      tweets: [],
+      tweets: window.localStorage.getItem("Tweets") ? JSON.parse(window.localStorage.getItem("Tweets")): [],
       addTweet: this.handleNewTweet.bind(this)
     };
   }
 
   handleNewTweet = (tweet) => {
+    let savedTweets = this.state.tweets;
+    const allTweets = [tweet, ...savedTweets]
+    window.localStorage.setItem("Tweets", JSON.stringify(allTweets));
     this.setState((prevState) => {
-      return { tweets: [tweet, ...prevState.tweets] }
+      return { tweets: allTweets }
     })
   }
 
   render() {
     return (
       <Router>
-      <div className="App">
-      <header className="App-header">
-        <NavBar></NavBar>
-        <MyAppContext.Provider value={this.state}>
-          <Tweet></Tweet>
-          <TweetsList></TweetsList>
-        </MyAppContext.Provider>
-        <Switch>
+        <div className="App">
+          <header className="App-header">
+            <NavBar></NavBar>
+            <MyAppContext.Provider value={this.state}>
+              <Tweet></Tweet>
+              <TweetsList></TweetsList>
+            </MyAppContext.Provider>
+            <Switch>
               <Route exact path="/"> </Route>
               <Route path="/profile"> </Route>
-        </Switch>
-      </header>
-    </div>
-    </Router>
+            </Switch>
+          </header>
+        </div>
+      </Router>
     )
   }
 
@@ -62,9 +65,9 @@ class App extends React.Component {
 //   );
 // }
 
-                        {/* <div>{tweet.time.toLocaleDateString("en-US")}</div> */}
+{/* <div>{tweet.time.toLocaleDateString("en-US")}</div> */ }
 
-                        // handleNewTweet(event) {
+// handleNewTweet(event) {
 //     this.setState({ tweet: {
 //         text:event.target.value,
 //         username: 'eric',
