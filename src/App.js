@@ -19,8 +19,13 @@ class App extends React.Component {
     };
   }
 
+
+  // setInterval(function(){ alert("Hello"); }, 3000);
+  
+  // setInterval(this.getData, 5000);
+  
   componentDidMount() {
-    getTweet().then(response => this.setState({ tweets: response.data.tweets, loading: false }))
+    setInterval(getTweet().then(response => this.setState({ tweets: response.data.tweets, loading: false })), 5000)
   }
 
   // componentWillUnmount () {}
@@ -29,9 +34,11 @@ class App extends React.Component {
     tweet.userName = window.localStorage.getItem("Username");
     tweet.date = new Date().toISOString();
     createTweet(tweet).catch(error => alert("Error!"));
-    this.setState((prevState) => {
-      return { tweets: [tweet, ...prevState.tweets] }
-    })
+    const {tweets} = this.state;
+    this.setState({ tweets: [tweet, ...tweets]})
+    // this.setState((prevState) => {
+    //   return { tweets: [tweet, ...prevState.tweets] }
+    // })
   }
 
   render() {
