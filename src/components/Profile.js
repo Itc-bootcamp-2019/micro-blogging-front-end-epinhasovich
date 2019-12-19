@@ -1,5 +1,4 @@
 import React from 'react';
-import MyAppContext from '../contexts/MyAppContext';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
 class Profile extends React.Component {

@@ -1,6 +1,7 @@
 body {
   background: #15202B;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -76,7 +77,7 @@ button {
   height: 84px;
   left: 367px;
   top: 320px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background: #343A40;
   border-radius: 6px;
 }
@@ -87,7 +88,7 @@ button {
 
 .date {
   display: inline;
-  margin-left: 360px;
+  margin-left: 340px;
   color: #6C757D;
 }
 

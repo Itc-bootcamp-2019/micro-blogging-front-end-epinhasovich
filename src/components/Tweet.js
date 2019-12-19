@@ -33,6 +33,5 @@ render() {
     }
 }
 
-    
 export default Tweet;
     
