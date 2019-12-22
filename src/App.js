@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       tweets: [],
       loading: true,
-      addTweet: this.handleNewTweet.bind(this)
+      addTweet: this.handleNewTweet.bind(this),
+      disableButton: true
     };
   }
   
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   getAllTweets () {
-    getTweet().then(response => this.setState({ tweets: response.data.tweets, loading: false }))
+    getTweet().then(response => this.setState({ tweets: response.data.tweets, loading: false, disableButton:false }))
   }
 
   // componentWillUnmount () {}
@@ -33,7 +34,7 @@ class App extends React.Component {
   handleNewTweet = (tweet) => {
     tweet.userName = window.localStorage.getItem("Username");
     tweet.date = new Date().toISOString();
-    createTweet(tweet).catch(error => alert("Error!"));
+    createTweet(tweet).catch(error => alert("Error! Wait until previous tweets load..."));
     const {tweets} = this.state;
     this.setState({ tweets: [tweet, ...tweets]})
   }

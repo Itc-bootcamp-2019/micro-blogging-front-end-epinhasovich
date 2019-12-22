@@ -40,5 +40,31 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDKyl3yz63VLzbXA7nG-ur9O3_pKD0IFFA",
+    authDomain: "microblog-eric.firebaseapp.com",
+    databaseURL: "https://microblog-eric.firebaseio.com",
+    projectId: "microblog-eric",
+    storageBucket: "microblog-eric.appspot.com",
+    messagingSenderId: "930013221019",
+    appId: "1:930013221019:web:b0957141f9019d0e94b63e",
+    measurementId: "G-HQCEBGMB6H"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   </body>
 </html>

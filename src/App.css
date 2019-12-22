@@ -149,3 +149,15 @@ button {
   background: #007BFF;
   border-radius: 4px;
 }
+
+.over {
+  position: absolute;
+  width: 338px;
+  height: 29px;
+  left: 383px;
+  top: 136px;
+  background: #F8D7DA;
+  border: 1px solid #F5C6CB;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
