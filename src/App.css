@@ -88,7 +88,7 @@ button {
 
 .date {
   display: inline;
-  margin-left: 340px;
+  margin-left: 300px;
   color: #6C757D;
 }
 
@@ -155,7 +155,7 @@ button {
   width: 338px;
   height: 29px;
   left: 383px;
-  top: 136px;
+  top: 250px;
   background: #F8D7DA;
   border: 1px solid #F5C6CB;
   box-sizing: border-box;
